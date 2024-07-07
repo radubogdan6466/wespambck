@@ -12,7 +12,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://main--wespam.netlify.app",
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://main--wespam.netlify.app",
   credentials: true,
   optionSuccessStatus: 200,
 };
@@ -41,7 +41,7 @@ mongoose
 const port = process.env.PORT || 4000;
 
 server.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+  console.log(`Server is running at https://main--wespam.netlify.app:${port}`);
 });
 
 io.on("connection", (socket) => {
